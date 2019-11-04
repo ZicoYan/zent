@@ -48,7 +48,16 @@ export type PopHookCallback = (
   escape?: () => void
 ) => void;
 
+export type IPopChildrenType =
+  | JSX.Element
+  | string
+  | number
+  | boolean
+  | null
+  | undefined;
+
 export interface IPopProps {
+  children: [IPopChildrenType] | IPopChildrenType | [];
   content: React.ReactNode;
   trigger?: 'none' | 'click' | 'hover' | 'focus';
   position?: PopPositions | PositionFunction;
